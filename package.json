@@ -4,7 +4,10 @@
   "description": "Notifies schedules of Keyakizaka46 on the day",
   "main": "handler.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "serverless deploy -v",
+    "logs": "SLACK_TOKEN=\"\" AWS_LAMBDA_IAM_ROLE=\"\" serverless logs -f notify",
+    "package": "serverless package -v",
+    "pretty": "prettier --write '*.ts'"
   },
   "dependencies": {
     "@slack/client": "^4.8.0",
