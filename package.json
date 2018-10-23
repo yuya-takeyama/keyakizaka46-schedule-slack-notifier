@@ -1,0 +1,33 @@
+{
+  "name": "keyakizaka46-schedule-slack-notifier",
+  "version": "1.0.0",
+  "description": "Notifies schedules of Keyakizaka46 on the day",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@slack/client": "^4.8.0",
+    "axios": "^0.18.0",
+    "jsdom": "^12.2.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
+    "node-fetch": "^2.2.0",
+    "striptags": "^3.1.1"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.1",
+    "@types/jsdom": "^12.2.0",
+    "@types/lodash": "^4.14.117",
+    "@types/node": "^8.0.57",
+    "@types/node-fetch": "^2.1.2",
+    "prettier": "^1.14.3",
+    "serverless-webpack": "^5.1.1",
+    "source-map-support": "^0.5.6",
+    "ts-loader": "^4.2.0",
+    "typescript": "^2.9.2",
+    "webpack": "^4.5.0"
+  },
+  "author": "Yuya Takeyama",
+  "license": "MIT"
+}

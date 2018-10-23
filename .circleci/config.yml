@@ -1,0 +1,58 @@
+version: 2
+jobs:
+  package:
+    docker:
+      - image: circleci/node:8.10
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-npm-{{ arch }}-{{ checksum "yarn.lock" }}
+            - v1-npm-{{ arch }}
+      - run:
+          command: yarn --pure-lockfile
+      - save_cache:
+          key: v1-npm-{{ arch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+      - run:
+          name: package
+          command: yarn package
+
+  deploy:
+    docker:
+      - image: circleci/node:8.10
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-npm-{{ arch }}-{{ checksum "yarn.lock" }}
+            - v1-npm-{{ arch }}
+      - run:
+          command: yarn --pure-lockfile
+      - save_cache:
+          key: v1-npm-{{ arch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+      - run:
+          name: deploy
+          command: yarn deploy
+
+workflows:
+  version: 2
+
+  build:
+    jobs:
+      - package:
+          filters:
+            branches:
+              ignore:
+                - master
+
+  build_deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only:
+                - master
