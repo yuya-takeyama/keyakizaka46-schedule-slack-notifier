@@ -25,17 +25,17 @@ export const notify: Handler = async (
     console.log(schedules);
     schedules.forEach(schedule => {
       const fields: { title: string; value: string; short?: boolean }[] = [];
-      if (schedule.time.from || schedule.time.to) {
-        fields.push({
-          title: 'Time',
-          value: `${schedule.time.from || ''}~${schedule.time.to || ''}`,
-          short: true,
-        });
-      }
       if (schedule.genre) {
         fields.push({
           title: 'Genre',
           value: schedule.genre,
+          short: true,
+        });
+      }
+      if (schedule.time.from || schedule.time.to) {
+        fields.push({
+          title: 'Time',
+          value: `${schedule.time.from || ''}~${schedule.time.to || ''}`,
           short: true,
         });
       }
