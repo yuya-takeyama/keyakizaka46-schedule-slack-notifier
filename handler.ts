@@ -22,7 +22,7 @@ export const notify: Handler = async (
     const channel = process.env.SLACK_CHANNEL;
     const slack = new WebClient(slackToken);
     const schedules = await fetchSchedules(moment());
-    console.log(schedules);
+    console.log('%j', schedules);
     const promises = schedules.map(schedule => {
       const fields: { title: string; value: string; short?: boolean }[] = [];
       if (schedule.genre) {
