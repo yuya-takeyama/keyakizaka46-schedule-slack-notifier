@@ -23,7 +23,7 @@ export const notify: Handler = async (
     const slack = new WebClient(slackToken);
     const schedules = await fetchSchedules(moment());
     console.log(schedules);
-    schedules.forEach(schedule => {
+    const promises = schedules.map(schedule => {
       const fields: { title: string; value: string; short?: boolean }[] = [];
       if (schedule.genre) {
         fields.push({
@@ -40,7 +40,7 @@ export const notify: Handler = async (
         });
       }
 
-      slack.chat.postMessage({
+      return slack.chat.postMessage({
         channel: channel,
         text: schedule.title || '',
         attachments: [
@@ -53,6 +53,7 @@ export const notify: Handler = async (
         mrkdwn: false,
       });
     });
+    await Promise.all(promises);
     console.log('Finished');
   } catch (err) {
     console.error(err);
