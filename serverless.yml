@@ -14,6 +14,8 @@ provider:
     SLACK_TOKEN: ${env:SLACK_TOKEN}
     SLACK_CHANNEL: ${env:SLACK_CHANNEL}
     TZ: JST
+  timeout: 30
+  memory: 256
 
 functions:
   notify:
