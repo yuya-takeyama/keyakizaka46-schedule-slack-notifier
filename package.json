@@ -7,7 +7,8 @@
     "deploy": "serverless deploy -v",
     "logs": "SLACK_TOKEN=\"\" AWS_LAMBDA_IAM_ROLE=\"\" serverless logs -f notify",
     "package": "serverless package -v",
-    "pretty": "prettier --write '*.ts'"
+    "pretty": "prettier --write '*.ts'",
+    "test": "jest"
   },
   "dependencies": {
     "@slack/client": "^4.8.0",

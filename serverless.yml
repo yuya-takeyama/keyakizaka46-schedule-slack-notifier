@@ -19,7 +19,7 @@ provider:
 
 functions:
   notify:
-    handler: handler.notify
+    handler: src/handler.notify
     role: ${env:AWS_LAMBDA_IAM_ROLE}
     events:
       - schedule: cron(0 1 * * ? *)
