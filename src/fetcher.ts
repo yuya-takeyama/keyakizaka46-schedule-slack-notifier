@@ -71,14 +71,7 @@ export const fetchSchedules = async (
       const res = await axios.get(
         toURL(`/s/k46o/media/list?dy=${date.format('YYYYMMDD')}`),
       );
-      const scheduleElements = new JSDOM(
-        res.data,
-      ).window.document.querySelectorAll(
-        '#schedule .box-schedule_inner .box-detail',
-      );
-      const schedules = map(scheduleElements, element =>
-        parseScheduleElement(element),
-      ).filter(schedule => schedule) as Schedule[];
+      const schedules = parseSchedules(res.data);
 
       resolve(schedules);
     } catch (err) {
