@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { JSDOM } from 'jsdom';
 import { first, map, tail, trim } from 'lodash';
-import * as moment from 'moment';
-import * as striptags from 'striptags';
+import moment from 'moment';
+import striptags from 'striptags';
 
 const BASE_URL = 'http://www.keyakizaka46.com';
 
