@@ -5551,7 +5551,7 @@ serialize-javascript@^2.1.2:
   resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-2.1.2.tgz#ecec53b0e0317bdc95ef76ab7074b7384785fa61"
   integrity sha512-rs9OggEUF0V4jUSecXazOYsLfu7OGK2qIn3c7IPBiffz32XniEp/TX9Xmc9LQfK2nQ2QKHvZ2oygKUGU0lG4jQ==
 
-serverless-webpack@^5.1.1:
+serverless-webpack@^5.3.2:
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/serverless-webpack/-/serverless-webpack-5.3.2.tgz#33368c65e8d017e737294f33f382b797c53e6ca9"
   integrity sha512-/p0Ht87AeQb13Vz3lEcT72vE3GOyDX70iX8fTuDZ0xMwfKtRogRkYzuV89HKc2ULIHx++g/NGTRU6nSGpA3snA==
@@ -5565,7 +5565,7 @@ serverless-webpack@^5.1.1:
     semver "^6.2.0"
     ts-node "^8.3.0"
 
-serverless@^1.32.0:
+serverless@^1.71.1:
   version "1.71.1"
   resolved "https://registry.yarnpkg.com/serverless/-/serverless-1.71.1.tgz#0e88754f6904aeecab4fa0d01747796b251ad65c"
   integrity sha512-Yphpk34C7KGS4eXAcaLks3oNgjFZ2k9p+B3Q4Q7UGECoNLyZWUVdItVAWKDht6F6+9hZt7/522vbR9u7QbwK3A==
