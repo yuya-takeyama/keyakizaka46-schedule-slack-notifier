@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#parseSchedules returns scheudles 1`] = `
+Array [
+  Object {
+    "description": undefined,
+    "genre": "ラジオ",
+    "time": Object {
+      "from": "23:30",
+      "to": "24:00",
+    },
+    "title": "欅坂46 こちら有楽町星空放送局",
+  },
+  Object {
+    "description": undefined,
+    "genre": "テレビ",
+    "time": Object {
+      "from": "24:35",
+      "to": "25:05",
+    },
+    "title": "テレビ東京「欅って、書けない?」",
+  },
+]
+`;

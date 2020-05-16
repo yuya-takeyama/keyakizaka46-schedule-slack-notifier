@@ -35,7 +35,7 @@ export const parseTime = (time?: string): ScheduleTime => {
   }
 };
 
-const parseScheduleElement = (element: Element): Schedule | undefined => {
+const parseScheduleElement = (element: any): Schedule | undefined => {
   const titleDescriptionElement = element.querySelector(
     '.box-detail_txt :last-child',
   );
@@ -71,14 +71,7 @@ export const fetchSchedules = async (
       const res = await axios.get(
         toURL(`/s/k46o/media/list?dy=${date.format('YYYYMMDD')}`),
       );
-      const scheduleElements = new JSDOM(
-        res.data,
-      ).window.document.querySelectorAll(
-        '#schedule .box-schedule_inner .box-detail',
-      );
-      const schedules = map(scheduleElements, element =>
-        parseScheduleElement(element),
-      ).filter(schedule => schedule) as Schedule[];
+      const schedules = parseSchedules(res.data);
 
       resolve(schedules);
     } catch (err) {
@@ -87,8 +80,11 @@ export const fetchSchedules = async (
   });
 };
 
-export const toValidJSON = (js: string): string => {
-  return js
-    .replace(/([a-zA-Z]+):/g, '"$1":')
-    .replace(/'(.*)'(,?)/g, (_, p1, p2) => `${JSON.stringify(p1)}${p2}`);
+export const parseSchedules = (data: string): Schedule[] => {
+  const scheduleElements = new JSDOM(data).window.document.querySelectorAll(
+    '#schedule .box-schedule_inner .box-detail',
+  );
+  return map(scheduleElements, element => parseScheduleElement(element)).filter(
+    schedule => schedule,
+  ) as Schedule[];
 };

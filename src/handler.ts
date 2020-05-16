@@ -1,13 +1,9 @@
-import { Callback, Context, Handler, ScheduledEvent } from 'aws-lambda';
+import { Handler } from 'aws-lambda';
 import { fetchSchedules } from './fetcher';
-import * as moment from 'moment';
+import moment from 'moment';
 import { WebClient } from '@slack/client';
 
-export const notify: Handler = async (
-  event: ScheduledEvent,
-  context: Context,
-  cb: Callback,
-) => {
+export const notify: Handler = async () => {
   try {
     if (typeof process.env.SLACK_TOKEN === 'undefined') {
       throw new Error('SLACK_TOKEN is not set');
