@@ -88,9 +88,3 @@ export const parseSchedules = (data: string): Schedule[] => {
     schedule => schedule,
   ) as Schedule[];
 };
-
-export const toValidJSON = (js: string): string => {
-  return js
-    .replace(/([a-zA-Z]+):/g, '"$1":')
-    .replace(/'(.*)'(,?)/g, (_, p1, p2) => `${JSON.stringify(p1)}${p2}`);
-};
