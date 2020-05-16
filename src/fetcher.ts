@@ -35,7 +35,7 @@ export const parseTime = (time?: string): ScheduleTime => {
   }
 };
 
-const parseScheduleElement = (element: Element): Schedule | undefined => {
+const parseScheduleElement = (element: any): Schedule | undefined => {
   const titleDescriptionElement = element.querySelector(
     '.box-detail_txt :last-child',
   );
@@ -85,6 +85,15 @@ export const fetchSchedules = async (
       reject(err);
     }
   });
+};
+
+export const parseSchedules = (data: string): Schedule[] => {
+  const scheduleElements = new JSDOM(data).window.document.querySelectorAll(
+    '#schedule .box-schedule_inner .box-detail',
+  );
+  return map(scheduleElements, element => parseScheduleElement(element)).filter(
+    schedule => schedule,
+  ) as Schedule[];
 };
 
 export const toValidJSON = (js: string): string => {
