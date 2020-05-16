@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@slack/client": "^4.8.0",
-    "axios": "^0.18.1",
+    "axios": "^0.19.2",
     "jsdom": "^12.2.0",
     "lodash": "^4.17.13",
     "moment": "^2.22.2",
