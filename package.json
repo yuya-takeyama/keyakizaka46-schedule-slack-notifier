@@ -12,7 +12,7 @@
   "dependencies": {
     "@slack/client": "^4.8.0",
     "axios": "^0.19.2",
-    "jsdom": "^12.2.0",
+    "jsdom": "^16.2.2",
     "lodash": "^4.17.13",
     "moment": "^2.22.2",
     "node-fetch": "^2.2.0",
