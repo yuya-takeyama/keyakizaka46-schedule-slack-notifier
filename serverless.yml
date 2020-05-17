@@ -19,7 +19,9 @@ provider:
 
 custom:
   webpack:
-    excludeFiles: '**/*.test.js'
+    excludeFiles:
+      - '**/*.test.js'
+      - 'node_modules/canvas/**/*'
     includeModules: true
 
 functions:
