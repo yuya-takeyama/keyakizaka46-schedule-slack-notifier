@@ -6,12 +6,12 @@ commands:
     steps:
       - restore_cache:
           keys:
-            - v1-npm-{{ arch }}-{{ checksum "yarn.lock" }}
-            - v1-npm-{{ arch }}
+            - v2-npm-{{ arch }}-{{ checksum "yarn.lock" }}
+            - v2-npm-{{ arch }}
       - run:
           command: yarn --pure-lockfile
       - save_cache:
-          key: v1-npm-{{ arch }}-{{ checksum "yarn.lock" }}
+          key: v2-npm-{{ arch }}-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
   run_tests:
