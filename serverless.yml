@@ -17,6 +17,11 @@ provider:
   timeout: 30
   memory: 256
 
+custom:
+  webpack:
+    excludeFiles: '**/*.test.js'
+    includeModules: true
+
 functions:
   notify:
     handler: src/handler.notify
