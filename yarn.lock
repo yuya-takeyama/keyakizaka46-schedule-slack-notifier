@@ -752,10 +752,10 @@
     request "^2.88.0"
     request-promise-native "^1.0.8"
 
-"@types/aws-lambda@8.10.1":
-  version "8.10.1"
-  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.1.tgz#424888a9ee89f6b5fc6dc23f31b00a715483dcaf"
-  integrity sha512-a9qWnTgl12AIQVUyZ6A9oHt0gkhPhuHLtpL6zkfUB/06KLWcDFJKT4ldAouIWjoM36t2cEWqI7HY9ty06cNBtQ==
+"@types/aws-lambda@8.10.55":
+  version "8.10.55"
+  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.55.tgz#7293cf7908766a60efc28262cbf65a8a957dec0e"
+  integrity sha512-rtJhfxbsqmIC6t/vnUqvZH2PyLHJscYc166P+sHWAIp0Rx4szDarL+Ul8esGYZFWrQ36q2MHrPMzuI23zXSlMg==
 
 "@types/babel__core@^7.1.7":
   version "7.1.7"
