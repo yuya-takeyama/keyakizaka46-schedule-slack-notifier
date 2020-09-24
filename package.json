@@ -16,7 +16,7 @@
     "jsdom": "^16.2.2",
     "lodash": "^4.17.19",
     "moment": "^2.22.2",
-    "node-fetch": "^2.2.0",
+    "node-fetch": "^2.6.1",
     "source-map-support": "^0.5.19",
     "striptags": "^3.1.1"
   },
