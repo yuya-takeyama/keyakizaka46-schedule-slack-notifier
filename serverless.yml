@@ -16,7 +16,7 @@ provider:
     TZ: JST
     SERVERLESS_STAGE: ${opt:stage}
   timeout: 30
-  memory: 256
+  memorySize: 256
 
 custom:
   webpack:
