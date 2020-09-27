@@ -13,12 +13,14 @@
   "dependencies": {
     "@slack/client": "^4.8.0",
     "axios": "^0.20.0",
+    "bufferutil": "^4.0.1",
     "jsdom": "^16.4.0",
     "lodash": "^4.17.20",
     "moment": "^2.29.0",
     "node-fetch": "^2.6.1",
     "source-map-support": "^0.5.19",
-    "striptags": "^3.1.1"
+    "striptags": "^3.1.1",
+    "utf-8-validate": "^5.0.2"
   },
   "devDependencies": {
     "@types/aws-lambda": "8.10.62",
