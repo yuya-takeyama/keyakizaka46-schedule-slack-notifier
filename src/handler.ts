@@ -1,4 +1,4 @@
-import { Handler } from 'aws-lambda';
+import { APIGatewayProxyHandler, Handler } from 'aws-lambda';
 import { fetchSchedules } from './fetcher';
 import moment from 'moment';
 import { WebClient } from '@slack/client';
@@ -22,6 +22,26 @@ export const notify: Handler = async () => {
     console.log('%j', schedules);
     notifySchedules(slack, channel, schedules);
     console.log('Finished');
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+};
+
+export const healthz: APIGatewayProxyHandler = async () => {
+  try {
+    const schedules = await fetchSchedules(moment());
+
+    return {
+      statusCode: 200,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        status: true,
+        schedules,
+      }),
+    };
   } catch (err) {
     console.error(err);
     throw err;

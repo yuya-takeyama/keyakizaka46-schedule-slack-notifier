@@ -30,3 +30,9 @@ functions:
     role: ${env:AWS_LAMBDA_IAM_ROLE}
     events:
       - schedule: cron(0 1 * * ? *)
+
+  healthz:
+    handler: src/handler.healthz
+    role: ${env:AWS_LAMBDA_IAM_ROLE}
+    events:
+      - http: GET healthz
