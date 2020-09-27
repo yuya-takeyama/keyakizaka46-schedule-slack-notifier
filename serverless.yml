@@ -9,11 +9,12 @@ provider:
   name: aws
   runtime: nodejs12.x
   region: ap-northeast-1
-  stage: production
+  stage: ${opt:stage}
   environment:
     SLACK_TOKEN: ${env:SLACK_TOKEN}
     SLACK_CHANNEL: ${env:SLACK_CHANNEL}
     TZ: JST
+    SERVERLESS_STAGE: ${opt:stage}
   timeout: 30
   memory: 256
 

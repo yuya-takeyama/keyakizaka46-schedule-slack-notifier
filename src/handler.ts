@@ -20,7 +20,11 @@ export const notify: Handler = async () => {
     const slack = new WebClient(slackToken);
     const schedules = await fetchSchedules(moment());
     console.log('%j', schedules);
-    notifySchedules(slack, channel, schedules);
+    if (process.env.SERVERLESS_STAGE === 'production') {
+      await notifySchedules(slack, channel, schedules);
+    } else {
+      console.log('Skip notifying to Slack');
+    }
     console.log('Finished');
   } catch (err) {
     console.error(err);
