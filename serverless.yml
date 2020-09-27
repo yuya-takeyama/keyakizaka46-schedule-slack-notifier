@@ -22,8 +22,6 @@ custom:
   webpack:
     excludeFiles:
       - '**/*.test.js'
-      - 'node_modules/canvas/**/*'
-    includeModules: true
 
 functions:
   notify:

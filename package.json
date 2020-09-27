@@ -14,6 +14,7 @@
     "@slack/client": "^4.8.0",
     "axios": "^0.20.0",
     "bufferutil": "^4.0.1",
+    "canvas": "file:./src/functions/canvas",
     "jsdom": "^16.4.0",
     "lodash": "^4.17.20",
     "moment": "^2.29.0",
