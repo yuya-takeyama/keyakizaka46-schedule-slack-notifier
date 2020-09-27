@@ -13,12 +13,15 @@
   "dependencies": {
     "@slack/client": "^4.8.0",
     "axios": "^0.20.0",
+    "bufferutil": "^4.0.1",
+    "canvas": "file:./src/functions/canvas",
     "jsdom": "^16.4.0",
     "lodash": "^4.17.20",
     "moment": "^2.29.0",
     "node-fetch": "^2.6.1",
     "source-map-support": "^0.5.19",
-    "striptags": "^3.1.1"
+    "striptags": "^3.1.1",
+    "utf-8-validate": "^5.0.2"
   },
   "devDependencies": {
     "@types/aws-lambda": "8.10.62",
@@ -34,8 +37,7 @@
     "ts-jest": "^26.4.0",
     "ts-loader": "^8.0.4",
     "typescript": "^3.9.7",
-    "webpack": "^4.44.2",
-    "webpack-node-externals": "^1.7.2"
+    "webpack": "^4.44.2"
   },
   "author": "Yuya Takeyama",
   "license": "MIT"
