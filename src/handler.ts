@@ -1,7 +1,8 @@
-import { Handler } from 'aws-lambda';
+import { APIGatewayProxyHandler, Handler } from 'aws-lambda';
 import { fetchSchedules } from './fetcher';
 import moment from 'moment';
 import { WebClient } from '@slack/client';
+import { notifySchedules } from './notifier';
 
 export const notify: Handler = async () => {
   try {
@@ -19,38 +20,32 @@ export const notify: Handler = async () => {
     const slack = new WebClient(slackToken);
     const schedules = await fetchSchedules(moment());
     console.log('%j', schedules);
-    const promises = schedules.map(schedule => {
-      const fields: { title: string; value: string; short?: boolean }[] = [];
-      if (schedule.genre) {
-        fields.push({
-          title: 'Genre',
-          value: schedule.genre,
-          short: true,
-        });
-      }
-      if (schedule.time.from || schedule.time.to) {
-        fields.push({
-          title: 'Time',
-          value: `${schedule.time.from || ''}~${schedule.time.to || ''}`,
-          short: true,
-        });
-      }
-
-      return slack.chat.postMessage({
-        channel: channel,
-        text: schedule.title || '',
-        attachments: [
-          {
-            fields,
-          },
-        ],
-        username: '今日のスケジュール',
-        icon_url: 'http://www.keyakizaka46.com/files/14/images/top/logo_l.jpg',
-        mrkdwn: false,
-      });
-    });
-    await Promise.all(promises);
+    if (process.env.SERVERLESS_STAGE === 'production') {
+      await notifySchedules(slack, channel, schedules);
+    } else {
+      console.log('Skip notifying to Slack');
+    }
     console.log('Finished');
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+};
+
+export const healthz: APIGatewayProxyHandler = async () => {
+  try {
+    const schedules = await fetchSchedules(moment());
+
+    return {
+      statusCode: 200,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        status: true,
+        schedules,
+      }),
+    };
   } catch (err) {
     console.error(err);
     throw err;
