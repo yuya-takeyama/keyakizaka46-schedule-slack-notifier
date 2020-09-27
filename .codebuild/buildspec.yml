@@ -1,0 +1,9 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - yarn --pure-lockfile
+  build:
+    commands:
+      - ./scripts/deploy.sh
