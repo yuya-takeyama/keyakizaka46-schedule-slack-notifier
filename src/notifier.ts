@@ -1,4 +1,4 @@
-import { WebClient } from '@slack/client';
+import { WebClient } from '@slack/web-api';
 import { Schedule } from './fetcher';
 
 export const notifySchedules = async (

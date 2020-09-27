@@ -1,7 +1,7 @@
 import { APIGatewayProxyHandler, Handler } from 'aws-lambda';
 import { fetchSchedules } from './fetcher';
 import moment from 'moment';
-import { WebClient } from '@slack/client';
+import { WebClient } from '@slack/web-api';
 import { notifySchedules } from './notifier';
 
 export const notify: Handler = async () => {
