@@ -1,5 +1,10 @@
 version: 0.2
 
+env:
+  secrets-manager:
+    SLACK_TOKEN: codebuild/keyakizaka46-schedule-slack-notifier:SLACK_TOKEN:AWSCURRENT:112def9c-a5e2-4348-9540-e412a7304b62
+    SLACK_CHANNEL: codebuild/keyakizaka46-schedule-slack-notifier:SLACK_CHANNEL:AWSCURRENT:112def9c-a5e2-4348-9540-e412a7304b62
+
 phases:
   pre_build:
     commands:
