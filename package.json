@@ -34,7 +34,7 @@
     "prettier": "^2.1.2",
     "serverless": "^1.71.1",
     "serverless-webpack": "^5.3.5",
-    "ts-jest": "^26.4.0",
+    "ts-jest": "^26.4.1",
     "ts-loader": "^8.0.4",
     "typescript": "^3.9.7",
     "webpack": "^4.44.2"
