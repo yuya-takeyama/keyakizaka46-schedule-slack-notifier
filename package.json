@@ -13,7 +13,7 @@
   "dependencies": {
     "@slack/web-api": "^5.13.0",
     "axios": "^0.20.0",
-    "bufferutil": "^4.0.1",
+    "bufferutil": "^4.0.2",
     "canvas": "file:./src/functions/canvas",
     "jsdom": "^16.4.0",
     "lodash": "^4.17.20",
