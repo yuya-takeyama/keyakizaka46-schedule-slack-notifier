@@ -21,7 +21,7 @@
     "node-fetch": "^2.6.1",
     "source-map-support": "^0.5.19",
     "striptags": "^3.1.1",
-    "utf-8-validate": "^5.0.2"
+    "utf-8-validate": "^5.0.3"
   },
   "devDependencies": {
     "@types/aws-lambda": "8.10.64",
