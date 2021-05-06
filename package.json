@@ -16,7 +16,7 @@
     "bufferutil": "^4.0.2",
     "canvas": "file:./src/functions/canvas",
     "jsdom": "^16.4.0",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "node-fetch": "^2.6.1",
     "source-map-support": "^0.5.19",
