@@ -11,7 +11,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@slack/web-api": "^5.13.0",
+    "@slack/web-api": "^6.2.3",
     "axios": "^0.20.0",
     "bufferutil": "^4.0.2",
     "canvas": "file:./src/functions/canvas",
