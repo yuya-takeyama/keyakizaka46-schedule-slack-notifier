@@ -24,7 +24,7 @@
     "utf-8-validate": "^5.0.3"
   },
   "devDependencies": {
-    "@types/aws-lambda": "8.10.64",
+    "@types/aws-lambda": "8.10.80",
     "@types/jest": "^26.0.15",
     "@types/jsdom": "^16.2.5",
     "@types/lodash": "^4.14.165",
