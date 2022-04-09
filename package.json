@@ -17,7 +17,7 @@
     "canvas": "file:./src/functions/canvas",
     "jsdom": "^16.4.0",
     "lodash": "^4.17.20",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "node-fetch": "^2.6.1",
     "source-map-support": "^0.5.19",
     "striptags": "^3.1.1",
